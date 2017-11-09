@@ -47,6 +47,7 @@ body {
 header {
     width: 100%;
     padding: 50px;
+    line-height: 50px;
     color: white;
     height: 150px;
     background-image: url(https://source.unsplash.com/1000x500);
@@ -55,6 +56,12 @@ header {
     position: fixed;
     top: 0px;
     z-index: 1100;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    text-shadow: 1px 1px 1px;
 }
 
 nav {
@@ -71,9 +78,14 @@ nav {
     height: 36px;
     background-color: rgb(70, 73, 233);
     display: flex;
+    justify-content: left;
     position: absolute;
     top: 5px;
     /* display: none; */
+}
+
+.nav-bar a {
+    text-decoration: none;
 }
 
 .nav-blank {
@@ -89,24 +101,29 @@ nav {
     justify-content: center;
 }
 
-.nav-bar-2 .nav-btn {
-    width: 100px;
-}
-
 .nav-btn {
-    width: 110px;
+    width: 140px;
     height: 36px;
     line-height: 34px;
     text-align: center;
     float: left;
     border-bottom: 1px solid rgb(70, 73, 233);
-    border-left: 1px solid white;
-    border-right: 1px solid white;
     background-color: rgb(70, 73, 233);
     color: white;
     padding: 0px;
     border-radius: 0px;
     position: relative;
+    display: flex;
+}
+
+.nav-bar-2 .nav-btn {
+    width: calc(100% / 6);
+}
+
+.nav-btn a {
+    width: 900px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
 }
 
 .nav-btn h1 {
@@ -125,16 +142,16 @@ nav {
     width: 100%;
     height: 100%;
     background-color: rgb(255, 255, 255);
-    border-radius: 3px;
     box-shadow: 1px 1px 30px grey;
     display: none;
     position: fixed;
-    top: 192px;
+    border: 5px solid rgb(255, 255, 255);
+    top: 120px;
     left: 0px;
 }
 
 .nav-btn-1 a {
-    height: calc( (100% - 192px) / 7);
+    height: calc( (100% - 120px) / 7);
     line-height: 50px;
     padding-left: 10px;
     padding-top: 7px;
@@ -159,66 +176,69 @@ nav {
 }
 
 .share-btn {
-    width: calc(100% - 4px);
+    width: 100%;
+    height: 20%;
+    text-decoration: none;
     background-color: rgb(10, 186, 181);
+    display: flex;
     position: fixed;
-    top: 192px;
-    left: 2px;
+    top: 120px;
+    left: 0px;
+    text-align: left;
+    border: 5px solid rgb(255, 255, 255);
     display: none;
 }
 
 .nav-btn:hover>.share-btn {
     display: block;
-}
-
-.share-btn div {
-    width: calc(100% - 4px);
-    text-align: center;
     display: flex;
-    justify-content: space-around;
 }
 
-.share-btn i {
-    color: white;
+.share-btn a {
+    color: rgb(255, 255, 255);
     font-size: 100px;
-    padding-top: 0px;
+    text-align: center;
 }
 
 .share-btn a:hover {
-    width: 25%;
-    display: block;
     background-color: orangered;
     color: white;
 }
 
-.nav-btn-2 {
-    z-index: 1001;
-    width: 130px;
-    height: 105px;
+.nav-btn-co {
+    z-index: 1006;
+    width: 140px;
+    height: 70px;
     line-height: 35px;
+    text-align: left;
+    padding-left: 20px;
     background-color: rgb(255, 255, 255);
     border-radius: 3px;
     box-shadow: 1px 1px 30px grey;
-    display: block;
-    position: relative;
-    top: 2px;
+    display: none;
+    position: absolute;
+    top: 37px;
     left: 0px;
 }
 
-.nav-btn-2 a {
+.nav-btn-co a {
+    font-family: sans-serif, Impact, Haettenschweiler, 'Arial Narrow Bold', ;
     display: block;
     color: black;
     text-decoration: none;
 }
 
-.nav-btn-2 {
-    display: none;
-}
-
-.nav-btn-2 a:hover {
+.nav-btn-co a:hover {
+    width: 140px;
+    height: 35px;
+    padding-left: 20px;
+    font-weight: bolder;
     display: block;
     background-color: orangered;
+    border-radius: 3px;
     color: white;
+    position: relative;
+    left: -20px;
 }
 
 .nav-btn:hover {
@@ -229,18 +249,66 @@ nav {
     display: block;
 }
 
-.nav-btn:hover>.nav-btn-2 {
+.nav-btn:hover>.nav-btn-co {
     display: block;
 }
+
+
+/*=============================================
+=            nav-btn-product            =
+=============================================*/
+
+.nav-btn-product {
+    z-index: 1006;
+    width: 140px;
+    height: 350px;
+    line-height: 35px;
+    text-align: left;
+    padding-left: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    box-shadow: 1px 1px 30px grey;
+    display: none;
+    position: absolute;
+    top: 37px;
+    left: 0px;
+}
+
+.nav-btn-product a {
+    font-family: sans-serif, Impact, Haettenschweiler, 'Arial Narrow Bold', ;
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+.nav-btn-product a:hover {
+    width: 140px;
+    height: 35px;
+    padding-left: 20px;
+    font-weight: bolder;
+    display: block;
+    background-color: orangered;
+    border-radius: 3px;
+    color: white;
+    position: relative;
+    left: -20px;
+}
+
+.nav-btn:hover>.nav-btn-product {
+    display: block;
+}
+
+
+/*=====  End of nav-btn-product  ======*/
 
 .mediaplay {
     width: 100%;
     height: 50%;
     background-color: orangered;
     border: 2px solid white;
-    border-radius: 5px;
     position: fixed;
-    top: 192px;
+    border: 5px solid rgb(255, 255, 255);
+    top: 120px;
     left: 0;
     display: none;
 }
@@ -256,24 +324,26 @@ nav {
 }
 
 .nav-btn-search {
-    width: calc( 100% - 4px);
+    width: 100%;
     height: 70px;
-    border: 2px solid white;
     background-color: orangered;
     color: black;
-    border: 1px solid red;
+    border: 4px solid rgb(255, 255, 255);
     position: fixed;
-    top: 192px;
-    left: 2px;
-    border-radius: 5px;
+    top: 120px;
+    left: 0;
     display: none;
 }
 
 .nav-btn-search a {
+    width: 200px;
     color: white;
     position: fixed;
     left: 10px;
-    top: 228px;
+    top: 155px;
+    text-align: left;
+    z-index: 1001;
+    border: 0px;
 }
 
 .nav-btn:hover>.nav-btn-search {
@@ -400,6 +470,7 @@ input[type=text]:hover {
     height: 50px;
     width: 400px;
     position: absolute;
+    text-align: center;
     top: calc((100% - 50px) /2);
     left: calc((100% - 400px) /2);
 }
@@ -467,8 +538,14 @@ footer {
     border: 1px solid red;
 }
 
-footer i {
+footer a {
     margin: 2px;
+    color: black;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
 }
 
 
@@ -622,6 +699,28 @@ footer i {
 }
 
 @media screen and (max-width:540px) {
+    header {
+        height: 80px;
+        padding-top: 30px;
+        line-height: 20px;
+    }
+    header h1 {
+        overflow: hidden;
+        font-size: 20px;
+    }
+    nav {
+        position: fixed;
+        top: 80px;
+        z-index: 1100;
+    }
+    .DM h1 {
+        font-size: 20px;
+        top: 80%;
+    }
+    .advertising-blank {
+        width: 100%;
+        height: 80px;
+    }
     .main {
         width: 540px;
         position: relative;
